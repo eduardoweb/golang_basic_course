@@ -34,9 +34,28 @@ func main() {
 	fmt.Println("Value:", value)
 
 	//Convertir texto a mnumero
-	value2, err := strconv.Atoi("sdsdsdsd")
-	if err != nil {
-		log.Fatal(err) //Esto me arroja el error en consola y aplica un exit, es decir, detiene el codigo
+	/* 	value2, err := strconv.Atoi("sdsdsdsd")
+	   	if err != nil {
+	   		log.Fatal(err) //Esto me arroja el error en consola y aplica un exit, es decir, detiene el codigo
+	   	}
+	   	fmt.Println("Value:", value2) */
+
+	//Switchj con condicion
+	switch modulo := 4 % 2; modulo {
+	case 0:
+		fmt.Println("Es par")
+	default:
+		fmt.Println("Es impar")
 	}
-	fmt.Println("Value:", value2)
+
+	//Switch sin condicion
+	value3 := 200
+	switch {
+	case value3 > 100:
+		fmt.Println("Es mayor a 100")
+	case value3 < 0:
+		fmt.Println("Es menor a 0")
+	default:
+		fmt.Println("No condicion")
+	}
 }
