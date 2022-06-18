@@ -1,7 +1,26 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"strings"
+)
 
+func isPalindromo(text string) {
+	var textReverse string
+
+	text = strings.ToLower(text)
+
+	for i := len(text) - 1; i >= 0; i-- {
+		textReverse += string(text[i])
+	}
+
+	if text == textReverse {
+		fmt.Println("Es Palindromo")
+	} else {
+		fmt.Println("No es Palindromo")
+	}
+
+}
 func main() {
 	//Array
 	//Los array son inmutablers, ers decir, no puedes agregar elementos
@@ -37,5 +56,28 @@ func main() {
 		slice2 = append(slice2, i)
 	}
 	fmt.Println(slice2)
+
+	//Recorrer un slice y mostrar el indice
+	slice4 := []string{"hola", "que", "haces"}
+
+	for i, valor := range slice4 {
+		fmt.Println(i, valor)
+	}
+
+	//Recorrer un slice y SIN mostrar el indice
+	slice5 := []string{"hola", "que", "haces"}
+
+	for _, valor := range slice5 {
+		fmt.Println(valor)
+	}
+
+	//Recorrer un slice mostrando solo el indice
+	slice6 := []string{"hola", "que", "haces"}
+
+	for i := range slice6 {
+		fmt.Println(i)
+	}
+
+	isPalindromo("Ama")
 
 }
